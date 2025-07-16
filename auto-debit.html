@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Debit Setup - PDA Finance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>🔁 Auto-Debit Setup</h2>
+
+    <input type="text" id="upiId" placeholder="Enter your UPI ID (e.g., name@upi)" />
+    <button onclick="enableAutoDebit()">Enable Auto Debit</button>
+
+    <p id="statusMsg" style="margin-top: 20px; font-weight: bold;"></p>
+  </div>
+
+  <script>
+    function enableAutoDebit() {
+      const upiId = document.getElementById("upiId").value.trim();
+      const statusMsg = document.getElementById("statusMsg");
+
+      if (!upiId || !upiId.includes("@")) {
+        alert("⚠️ Enter a valid UPI ID (e.g., yourname@upi)");
+        return;
+      }
+
+      // Simulate success
+      statusMsg.innerHTML = `✅ Auto-debit has been enabled for <strong>${upiId}</strong>`;
+      alert("🎉 Auto-debit setup successful!");
+    }
+  </script>
+</body>
+</html>
