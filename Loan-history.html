@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loan History - PDA Finance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>📜 Loan History</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount (₹)</th>
+          <th>Tenure</th>
+          <th>Purpose</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="loanData">
+        <!-- Loan entries will go here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Sample loan history data
+    const loans = [
+      { date: "2025-07-01", amount: 50000, tenure: "12 months", purpose: "Education", status: "Approved" },
+      { date: "2025-06-15", amount: 30000, tenure: "6 months", purpose: "Medical", status: "Paid" },
+      { date: "2025-05-10", amount: 70000, tenure: "24 months", purpose: "Business", status: "Ongoing" }
+    ];
+
+    const tableBody = document.getElementById("loanData");
+
+    loans.forEach(loan => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${loan.date}</td>
+        <td>₹${loan.amount}</td>
+        <td>${loan.tenure}</td>
+        <td>${loan.purpose}</td>
+        <td>${loan.status}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
